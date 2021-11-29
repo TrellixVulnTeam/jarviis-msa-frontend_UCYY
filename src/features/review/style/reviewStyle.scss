@@ -1,0 +1,12 @@
+.review-container {
+    display: grid;
+    grid-template-columns: 500px minmax( 1fr);
+    grid-template-rows:  1fr ;
+    justify-items: center;
+    text-shadow: gray;
+  }
+.reviewText{
+  font-weight: bolder;
+  font-size: large;
+}
+
