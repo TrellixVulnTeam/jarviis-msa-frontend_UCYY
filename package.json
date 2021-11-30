@@ -40,6 +40,7 @@
         "bootstrap": "^5.1.3",
         "clsx": "1.1.1",
         "craco-alias": "^3.0.1",
+        "craco-less-plugin": "^0.0.3",
         "date-fns": "2.25.0",
         "date-fns-jalali": "2.25.0-0",
         "draft-js": "0.11.7",
@@ -125,6 +126,7 @@
         "@typescript-eslint/eslint-plugin": "^4.33.0",
         "@typescript-eslint/parser": "^4.33.0",
         "babel-eslint": "10.1.0",
+        "craco-eslint-webpack-plugin": "^1.0.0",
         "cross-env": "7.0.3",
         "eslint": "7.32.0",
         "eslint-config-airbnb": "^18.2.1",
@@ -147,6 +149,7 @@
     "scripts": {
         "start": "craco start",
         "build": "cross-env GENERATE_SOURCEMAP=false craco build",
+        "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
         "test": "craco test --env=node",
         "eject": "craco eject",
         "build-docs": "babel-node --presets @babel/preset-env src/app/main/documentation/material-ui-components/build.js",

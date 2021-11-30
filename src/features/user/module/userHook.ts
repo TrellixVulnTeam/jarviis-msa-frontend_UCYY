@@ -1,4 +1,4 @@
-import { JoinPayload, joinRequest, RootState } from "../reducer/userSlice";
+import { ExistPayload, existRequest, JoinPayload, joinRequest, RootState } from "../reducer/userSlice";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -19,6 +19,13 @@ export default function useUser() {
   const join = useCallback((data: JoinPayload) => {
     dispatch(joinRequest(data))
   }, [])
+  const modify = useCallback((data: JoinPayload) => {
+    dispatch(joinRequest(data))
+  },[])
+  const exist = useCallback((data: ExistPayload) => {
 
-  return { userLoading, login, join };
+    dispatch(existRequest(data))
+  },[])
+
+  return { userLoading, login, join, modify, exist };
 }

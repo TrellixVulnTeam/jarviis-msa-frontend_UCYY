@@ -1,5 +1,4 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { styled, darken } from '@mui/material/styles';
 import { useDispatch } from 'react-redux'
 import { motion } from 'framer-motion';
 import { Controller, useForm } from 'react-hook-form';
@@ -15,7 +14,7 @@ import { LayOut } from 'features/common'
 import 'features/user/style/UserLayout.scss'
 import "features/user/style/UserRegister.scss"
 import { CheckList } from '..';
-import { joinRequest } from '../reducer/userSlice';
+import { existRequest, joinRequest } from '../reducer/userSlice';
 
 /**
  * 생년월일/나이/핸드폰번호 추가하기. 
@@ -29,6 +28,10 @@ const schema = yup.object().shape({
     .required('Please enter your password.')
     .min(8, 'Password is too short - should be 8 chars minimum.'),
   passwordConfirm: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match'),
+  birth: yup.string().required('주민번호 앞 6 자리')
+            .min(6, '너무 짧습니다.'),
+  address: yup.string().required('거주 도시명 까지만 적어주세요!')
+              .min(2, '너무 짧습니다.')
 
 });
 
@@ -42,7 +45,7 @@ const defaultValues = {
 };
 
 export default function Register3Page() {
-  const { control, formState, handleSubmit, reset } = useForm({
+  const { control, formState, handleSubmit, reset, getValues } = useForm({
     mode: 'onChange',
     defaultValues,
     resolver: yupResolver(schema),
@@ -130,8 +133,8 @@ export default function Register3Page() {
                       />
                     )}
                   />
-                  <button onClick={() => dispatch(
-                    exist(document.getElementById('email').value))}>중복체크</button>
+                {/* <button onClick={handleSubmit(async (data) => {await dispatch(existRequest(data))})}>중복체크</button> */}
+                <button type="button" onClick={async ()=>{await dispatch(existRequest(getValues().email))}}>중복체크</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                   <Controller

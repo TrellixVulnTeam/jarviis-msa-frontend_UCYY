@@ -1,5 +1,5 @@
 import axios from "axios";
-import { JoinPayload, LoginPayload } from "./userSlice";
+import { ExistPayload, JoinPayload, LoginPayload } from "./userSlice";
 const SERVER = "http://127.0.0.1:3001/";
 const headers = {
   "Content-Type": "application/json",
@@ -12,13 +12,30 @@ function loginAPI(data: LoginPayload) {
 function joinAPI(data: JoinPayload) {
   return axios.post(`${SERVER}users/join`, JSON.stringify(data), { headers });
 }
-// const exist = x => axios.get(`${SERVER}/users/exist/${x}`)
-// const modify = x => axios.put(`${SERVER}/users/modify/${x}`)//pk로 찾는거
-// const remove = x => axios.delete(`${SERVER}/user/delete/${x}`)
-// const list = x => axios.get(`${SERVER}/users/list/${x}`)//page로 찾는거
-// const find = x => axios.get(`${SERVER}/users/find/${x}`)
+function existAPI(data: ExistPayload) {
+  return axios.get(`${SERVER}users/exist/${data}`);
+}
+function modifyAPI(data: "") {
+  return axios.get(`${SERVER}users/modify/${data}`);
+}
+function removeAPI(data: "") {
+  return axios.get(`${SERVER}users/remove/${data}`);
+}
+function listAPI(data: "") {
+  return axios.get(`${SERVER}users/list/${data}`);
+}
+function findAPI(data: "") {
+  return axios.get(`${SERVER}users/find/${data}`);
+}
 
 export default {
   loginAPI,
   joinAPI,
+  existAPI,
+  listAPI,
+  removeAPI,
+  modifyAPI,
+  findAPI
+  
+
 };

@@ -10,13 +10,30 @@ import {
   joinSuccess,
   joinFailure,
   joinRequest,
+  ExistPayload,
+  existSuccess,
+  existFailure,
+  existRequest,
 } from "features/user/reducer/userSlice";
 import { userAPI  } from "features/user";
+
+function* exist(action: PayloadAction<ExistPayload>){
+  try{
+    const result : UserDataPayload = yield call(
+      userAPI.existAPI,
+      action.payload
+    );
+    yield put(existSuccess(result));
+    alert("써도되는 아이디입니다.")
+  } catch (error: any){
+    yield put(existFailure(error))
+    alert("있는 아이디입니다.")
+  }
+}
 
 
 function* join( action: PayloadAction<JoinPayload>){
   try{
-    alert("왔니?")
     const result : UserDataPayload = yield call(
       userAPI.joinAPI,
       action.payload
@@ -25,13 +42,12 @@ function* join( action: PayloadAction<JoinPayload>){
     yield put(joinSuccess(result));
     window.location.href = 'users/login'
   } catch (error: any){
-    alert("아이디오류")
+    // alert("아이디오류")
     yield put(joinFailure(error));
   }
 }
 
 function* login(action: PayloadAction<LoginPayload>) {
-  
   try {
     // alert("보냈지롱")
     // fork는 비동기 call은 동기
@@ -61,4 +77,7 @@ export function* watchLogin() {
 }
 export function* watchJoin(){
   yield takeLatest(joinRequest.type, join);
+}
+export function* watchExist(){
+  yield takeLatest(existRequest.type, exist);
 }

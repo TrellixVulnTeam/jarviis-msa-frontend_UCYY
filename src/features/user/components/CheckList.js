@@ -16,19 +16,19 @@ export default function Cheacklist() {
         <h4>Check List 작성하기</h4>
         <label component="legend">What's your Job?</label><br/>
         <input type="checkbox" id="select0" class="checkbox"/>
-        <label for="select0" class="input-label checkbox">체크박스1</label>
+        <label for="select0" class="input-label checkbox">학생</label>
         <input type="checkbox" id="select1" class="checkbox"/>
-        <label for="select1" class="input-label checkbox">체크박스2</label>
+        <label for="select1" class="input-label checkbox">주부</label>
         <input type="checkbox" id="select2" class="checkbox"/>
-        <label for="select2" class="input-label checkbox">체크박스3</label>
+        <label for="select2" class="input-label checkbox">백수</label>
         <div>
         <label component="legend">What are you interested in?</label><br/>
         <input type="checkbox" id="select4" class="checkbox"/>
-        <label for="select4" class="input-label checkbox">체크박스1</label>
+        <label for="select4" class="input-label checkbox">개발자</label>
         <input type="checkbox" id="select5" class="checkbox"/>
-        <label for="select5" class="input-label checkbox">체크박스2</label>
+        <label for="select5" class="input-label checkbox">다이어트</label>
         <input type="checkbox" id="select6" class="checkbox"/>
-        <label for="select6" class="input-label checkbox">체크박스3</label>
+        <label for="select6" class="input-label checkbox">지붕수리공</label>
         </div>
         </div>
         

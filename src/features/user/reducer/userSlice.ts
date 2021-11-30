@@ -14,6 +14,9 @@ export interface UserDataPayload {
   }
 }
 //요청하는 데이터
+export interface ExistPayload{
+  email: string;
+}
 export interface LoginPayload {
   email: string;
   password: string;
@@ -74,6 +77,33 @@ const userSlice = createSlice({
       state.userLoading = false;
       state.error = action.payload;
     },
+     //modify
+    modifyRequest(state: UserState, action: PayloadAction<JoinPayload>){
+      state.userLoading = true;
+      state.error = null;
+    },
+    modifySuccess(state: UserState, action: PayloadAction<UserDataPayload>){
+      state.userLoading = false;
+      state.error = action.payload;
+    },
+    modifyFailure(state: UserState, action: PayloadAction<{ error: any }>){
+      state.userLoading = false;
+      state.error = action.payload;
+    },
+    //exist
+    existRequest(state: UserState, action:PayloadAction<ExistPayload>){
+      state.userLoading = true;
+      state.error = null;
+    },
+    existSuccess(state: UserState, action: PayloadAction<UserDataPayload>){
+      state.userLoading = false;
+      state.error = action.payload;
+    },
+    existFailure(state: UserState, action: PayloadAction<{ error: any }>){
+      state.userLoading = true;
+      state.error = null;
+    }
+
   },
 });
 
@@ -85,6 +115,12 @@ const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 const { reducer, actions } = userSlice;
 export const {
+  modifyRequest,
+  modifyFailure,
+  modifySuccess,
+  existFailure,
+  existRequest,
+  existSuccess,
   loginRequest,
   loginSuccess,
   loginFailure,
