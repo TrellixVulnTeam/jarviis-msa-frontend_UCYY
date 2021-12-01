@@ -11,10 +11,10 @@ export default function HomeMain() {
   const Carousel = makeCarousel(CarouselUI);
 
   return (
-    <div>
+    <div className="hmp">
       <h1>
         <Fade left cascade>
-          = JARVIIS HOME =
+          = 당신의 하나뿐인 개인비서 자비스에 오신 걸 환영합니다 =
         </Fade>
       </h1>
       <Carousel defaultWait={5000} /*wait for 1000 milliseconds*/ >

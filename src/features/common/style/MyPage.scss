@@ -69,4 +69,18 @@
               transform: scale3d(1, 1, 1);
     }
   }
+  @media (max-width:1440px) {
+    .mypage{
+      font-size: 14px;
+      margin: 26px;
+    }
+    .myp div{
+      margin-top: 30px;
+    }
+    .myp a {
+      font-size: 10px;
+      margin: auto;
+
+    }
+  }
   
