@@ -7,6 +7,8 @@
       -ms-flex-direction: row;
           flex-direction: row;
   text-align: center;
-  width: 50vh;
+  width: 143vh;
+  margin-left: -246px;
+  font-family: 'Montserrat', sans-serif;
 }
 /*# sourceMappingURL=UserRegister.css.map */

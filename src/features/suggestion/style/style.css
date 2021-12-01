@@ -1,9 +1,13 @@
-@import url(c:\Users\bitcamp\Desktop\jarviis-msa-user\frontend\src\features\todo\style\icons.min.css);
+@import url(c:\Users\bitcamp\Desktop\jarviis-msa-frontend\frontend\src\features\suggestion\style\icons.min.css);
 /*------- 11. About style ------ */
+.welcome-content {
+  background-color: #f9f7e8;
+  color: #62bfad;
+}
+
 .welcome-content h5 {
   font-weight: 500;
   font-size: 16px;
-  color: #666;
   margin: 0;
   letter-spacing: 0.3px;
 }
@@ -13,7 +17,6 @@
   font-weight: 500;
   letter-spacing: 0.3px;
   margin: 8px 0 30px;
-  color: #433f3f;
   position: relative;
   display: inline-block;
   padding: 0 0 23px;
@@ -60,6 +63,15 @@
 }
 
 /* about page */
+.team-area {
+  font-family: "UhBeeRami";
+  text-shadow: 0 0 black;
+  width: 400px;
+  text-align: center;
+  padding: 2%;
+  margin-top: -724px;
+}
+
 .single-count .count-icon i {
   font-size: 50px;
   line-height: 1;
@@ -108,7 +120,7 @@
 }
 
 .team-wrapper {
-  background-color: #f7f7f7;
+  background-color: #f9f7e8;
 }
 
 .team-wrapper .team-img {
@@ -169,13 +181,14 @@
 }
 
 .team-wrapper .team-content {
-  padding: 20px 10px 23px;
+  padding: 70px 9px 43px;
+  color: black;
 }
 
 .team-wrapper .team-content h4 {
   font-size: 18px;
   font-weight: 500;
-  margin: 0 0 3px;
+  margin: 11px 0 3px;
   text-transform: capitalize;
 }
 
@@ -185,8 +198,9 @@
 }
 
 .team-wrapper:hover .team-action {
-  top: 50%;
+  top: 146%;
   opacity: 1;
+  width: 380px;
 }
 
 .single-mission h3 {

@@ -34,6 +34,7 @@ const App = () => {
         <Route path='/history/history' element={<History />} />
         <Route path='/suggestion/about' element={<About />} />
         <Route path='/calendar/calendar' element={<Calendar />} />
+        {/* <Route path='/test/test1' element={<Test />} /> */}
         {/* <Route path='/todo/task' element={<AppTasks />} /> */}
         <Route path='/admin/adminLogin' element={<AdminLogin />} />
         <Route path='/admin' element={<AdminPage />} />

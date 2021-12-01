@@ -4,6 +4,7 @@ import makeCarousel from 'react-reveal/makeCarousel';
 import Slide from 'react-reveal/Slide';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import "features/common/style/HomeMainStyle.scss"
 
 export default function HomeMain() {
   const CarouselUI = ({ children }) => <Container>{children}</Container>;

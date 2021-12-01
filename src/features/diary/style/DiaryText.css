@@ -5,17 +5,21 @@
 }
 
 .manuscript-all {
-  width: 1645px;
+  width: 100%;
+  margin: auto;
 }
 
 .diary-pencil {
-  width: 20px;
+  margin-left: 20px;
+  width: 30px;
   cursor: pointer;
   z-index: 9999;
   display: block;
 }
 
 .manuscript {
+  width: 100%;
+  margin: auto;
   font-size: 16px;
   line-height: 32px;
   padding: 8px 0;

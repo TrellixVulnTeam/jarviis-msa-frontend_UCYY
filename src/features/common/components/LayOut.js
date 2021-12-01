@@ -6,12 +6,7 @@ import 'features/common/style/LayOutStyle.scss'
 import 'features/common/style/Button.scss'
 import { Chatbot } from 'features/chatbot';
 
-//const Item = styled(Paper)(({ theme }) => ({
-//  ...theme.typography.body2,
-//  padding: theme.spacing(1),
-//  textAlign: 'center',
-//  color: theme.palette.text.secondary,
-//}));
+
 
 const LayOut = (props) => {
   const sessionUser = localStorage.getItem("sessionUser")
