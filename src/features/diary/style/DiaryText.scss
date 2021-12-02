@@ -10,8 +10,8 @@
     
 }
 .diary-pencil{
-    margin-left: 20px;
-    width: 30px;
+    margin-left: 1vw;
+    width: 2vw;
     cursor: pointer;
     z-index: 9999;
     display: block;
@@ -19,8 +19,8 @@
 .manuscript {
     width: 100%;
     margin: auto;
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 3vw;
+    line-height: 3vh;
     padding: 8px 0;
     border: 2px solid var(--border-color);
     background: -webkit-linear-gradient(
@@ -111,8 +111,8 @@
     display: flex;
     flex-wrap: wrap;
     margin: -8px -1px 8px 0;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1vw;
+    line-height: 2vw;
     font-family: 'UhBeeRami';
     font-weight: bold;
     
@@ -122,15 +122,12 @@
 .manuscript > p > span {
     display: inline-block;
     text-align: center;
-    width: 24px;
-    height: 24px;
+    width: 2.5vh;
+    height: 2vh;
     flex-shrink: 0;
     margin-top: 8px;
     
 }
-
-
-
 .manuscript > :last-child {
     margin-bottom: 0;
 }

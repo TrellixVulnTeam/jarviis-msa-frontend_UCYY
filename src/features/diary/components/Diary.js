@@ -30,7 +30,7 @@ export default function DiaryTest() {
             <Div>
             
     <TableContainer >
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 10 }} aria-label="simple table">
         <TableHead>
         <TableRow>
         
@@ -40,12 +40,12 @@ export default function DiaryTest() {
         </TableHead>
         <TableBody>
         <TableRow>
-            <TableCell align="center" style={{ width: '15%', height:'10px'}}>
-                <img class="wobble-hor-bottom" style={{ width: '80px', cursor: "pointer" }} 
+            <TableCell align="center" style={{ width: '15vw'}}>
+                <img class="wobble-hor-bottom" style={{ width: '4vw', cursor: "pointer" }} 
                 src={require("features/diary/images/fingerl.png").default} 
                 onClick={() => setTest(new Date(test.setDate(test.getDate() - 1)))} />
             </TableCell>
-            <TableCell style={{textAlign:'center', width:'20%'}}>
+            <TableCell style={{textAlign:'center', width:'20vw'}}>
         <div style={{ borderCollapse: "collapse" }}>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
@@ -71,18 +71,18 @@ export default function DiaryTest() {
                 </DiarySmallText>
             </TableCell>
             <TableCell style={{textAlign:'center', width:'15%'}}>
-                <img style={{ width: '200px', cursor: "pointer" }}
+                <img style={{ width: '16vw', cursor: "pointer" }}
                 src={require("features/diary/images/today.png").default} onClick={() => setTest(today)} />
         </TableCell>
             <TableCell align="center">
                 <DiarySmallText>맑음</DiarySmallText>
-                <img style={{ width: "100px" }} src={sunny} />
+                <img style={{ width: "5vw" }} src={sunny} />
                 </TableCell>
             <TableCell align="center" style={{ width: '15%'}}>
                 {test.toISOString().substring(0, 10) < today.toISOString().substring(0, 10)}
                 {dateToString(test) < dateToString(today)
                 ? <><img class="wobble-hor-bottom"
-                style={{ width: '80px', cursor: "pointer", visibility: "visible" }}
+                style={{ width: '4vw', cursor: "pointer", visibility: "visible" }}
                     src={require("features/diary/images/fingerr.png").default}
                     onClick={() => setTest(new Date(test.setDate(test.getDate() + 1)))} />
                 </>
@@ -120,17 +120,17 @@ export default function DiaryTest() {
 
 const DiaryText = styled.div`
     font-family: 'UhBeeRami';
-    font-size: 20px;
+    font-size: 2vw;
     font-weight: bold;
 `
 const DiarySmallText = styled.div`
     font-family: 'UhBeeRami';
-    font-size: 20px;
+    font-size: 2vw;
     font-weight: bold;
 `
 const Div = styled.div`
     text-align: center;
-    width: 1600px;
+    width: 80vw;
 `
 const TR = styled.tr`
 width: 50%

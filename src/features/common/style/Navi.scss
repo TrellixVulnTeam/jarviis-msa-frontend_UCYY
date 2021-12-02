@@ -32,6 +32,7 @@ header {
   header {
     flex-direction: row;
     padding: 3px;
+ 
   }
   .gnb li {
     margin: 0 20px;
@@ -74,6 +75,7 @@ header {
 @media (max-width:864px) {
   header {
     flex-direction: row;
+    min-width: 748px;
     
   }
   .gnb li {
