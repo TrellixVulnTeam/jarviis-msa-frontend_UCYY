@@ -13,8 +13,17 @@ export default function mypage() {
     // const history = useHistory()
     return (
         <>
-       
-        {localStorage.length > 0 ?
+         <div className="myp">
+            <h4>서수완님 안녕하세요!</h4>
+            <img className='snoopy-img' src={require("../images/snoopy.png").default} /><br />
+            <h5>be with you</h5>
+            <div>
+            <Link className="arrow-btn" to="/mypage/setting">설정</Link><br />
+            <LogOut/>
+             </div>
+             </div>
+{/*        
+        {localStorage.length < 0 ?
         <form className="mypage" id="jello-horizontal" >
              <div className="myp">
             <h4>{sessionUser}님 안녕하세요!</h4>
@@ -25,7 +34,7 @@ export default function mypage() {
             <LogOut/>
              </div>
              </div>
-        </form>: <></>}
+        </form>: <></>} */}
         </>
     )
 }

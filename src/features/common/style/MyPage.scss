@@ -1,5 +1,5 @@
 .mypage{
-    margin: 40px;
+    margin: 40vh;
     display: inline-grid;
     justify-items: start;
     position:fixed;
@@ -70,6 +70,21 @@
               transform: scale3d(1, 1, 1);
     }
   }
+  @media (max-width:1580px) {
+    .mypage{
+      font-size: 14px;
+      margin: 40px;
+    }
+    .myp div{
+      margin-top: 30px;
+    }
+    .myp a {
+      font-size: 10px;
+      margin: auto;
+
+    }
+  }
+  
   @media (max-width:1440px) {
     .mypage{
       font-size: 14px;

@@ -57,7 +57,7 @@ export default function FullWidthTabs() {
   return (
     <LayOut>
         <div className= 'review-container'>
-            <box style={{ width: 1500 }}>
+            <box className="review-box">
             <div className="reviewText"  position="static">
                 <Tabs 
                 value={value}

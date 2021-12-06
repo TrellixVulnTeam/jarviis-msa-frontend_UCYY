@@ -1,8 +1,10 @@
+## yarn start 전에 해야될것!
+## yarn add craco-alias @craco/craco
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-## yarn add craco-alias @craco/craco
 
 In the project directory, you can run:
 

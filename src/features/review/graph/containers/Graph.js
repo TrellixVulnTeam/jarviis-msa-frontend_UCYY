@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export default function Review() {
     return(<>
-    <div>
+    <div style={{textAlign:"center"}}>
         <h1>Review test</h1>
     </div>
     <ChartDiv>

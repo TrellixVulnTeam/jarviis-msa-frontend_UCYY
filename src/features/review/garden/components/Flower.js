@@ -24,9 +24,9 @@ export default function Flower() {
         }
     }
     return(
-        <div style={{margin:''}}>
-            <h1>꽃키우기</h1>
-            <div style={{width:'100%'}}>{grow()}</div>
+        <div  className="flower-div" >
+            <h1>꽃을 키워보자!</h1>
+            <div>{grow()}</div>
             <p>STEP : {step}</p>
             <button onClick={()=>setStep(step + 1)}>Grow UP!</button>
         

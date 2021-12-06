@@ -8,4 +8,10 @@
 div ul {
   list-style: none;
 }
+
+@media (max-width: 1440px) {
+  #foo {
+    font-size: 7px;
+  }
+}
 /*# sourceMappingURL=Footer.css.map */

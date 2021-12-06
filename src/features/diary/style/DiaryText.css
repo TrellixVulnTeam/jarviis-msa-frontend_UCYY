@@ -10,8 +10,8 @@
 }
 
 .diary-pencil {
-  margin-left: 20px;
-  width: 30px;
+  margin-left: 1vw;
+  width: 2vw;
   cursor: pointer;
   z-index: 9999;
   display: block;
@@ -20,8 +20,8 @@
 .manuscript {
   width: 100%;
   margin: auto;
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 3vw;
+  line-height: 3vh;
   padding: 8px 0;
   border: 2px solid var(--border-color);
   background: linear-gradient(to bottom, var(--bg-transparent) 0%, var(--bg-transparent) 1px, var(--bg-color) 1px, var(--bg-color) 8px, var(--bg-transparent) 8px, var(--bg-transparent) 100%), linear-gradient(to bottom, var(--bg-transparent) 0%, var(--bg-transparent) 1px, var(--bg-color) 1px, var(--bg-color) 8px, var(--bg-transparent) 8px, var(--bg-transparent) 100%), linear-gradient(to right, var(--border-color) 0%, var(--border-color) 1px, var(--bg-transparent) 1px, var(--bg-transparent) 100%), linear-gradient(to bottom, var(--border-color) 0%, var(--border-color) 1px, var(--bg-transparent) 1px, var(--bg-transparent) 100%), linear-gradient(to bottom, var(--border-color) 0%, var(--border-color) 1px, var(--bg-transparent) 1px, var(--bg-transparent) 100%), var(--bg-color);
@@ -36,8 +36,8 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: -8px -1px 8px 0;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1vw;
+  line-height: 2vw;
   font-family: 'UhBeeRami';
   font-weight: bold;
 }
@@ -45,8 +45,8 @@
 .manuscript > p > span {
   display: inline-block;
   text-align: center;
-  width: 24px;
-  height: 24px;
+  width: 2.5vh;
+  height: 2vh;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-top: 8px;

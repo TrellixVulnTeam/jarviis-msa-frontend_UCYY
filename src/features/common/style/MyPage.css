@@ -1,5 +1,5 @@
 .mypage {
-  margin: 40px;
+  margin: 40vh;
   display: -ms-inline-grid;
   display: inline-grid;
   justify-items: start;
@@ -70,6 +70,34 @@
   100% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+  }
+}
+
+@media (max-width: 1580px) {
+  .mypage {
+    font-size: 14px;
+    margin: 40px;
+  }
+  .myp div {
+    margin-top: 30px;
+  }
+  .myp a {
+    font-size: 10px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 1440px) {
+  .mypage {
+    font-size: 14px;
+    margin: 26px;
+  }
+  .myp div {
+    margin-top: 30px;
+  }
+  .myp a {
+    font-size: 10px;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=MyPage.css.map */

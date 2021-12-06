@@ -12,7 +12,7 @@ export default function Cheacklist() {
    //    initial={{ opacity: 0, scale: 0.6 }}
    //    animate={{ opacity: 1, scale: 1 }}
    //  >
-        <div class="wrap">
+        <div className="wrap">
         <h4>Check List 작성하기</h4>
         <label component="legend">What's your Job?</label><br/>
         <input type="checkbox" id="select0" class="checkbox"/>

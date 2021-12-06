@@ -1,18 +1,3 @@
-@media (max-width:768px) {
-  .diap{
-    width: px;
-  }
-}
-  .diary_wrapper {
-    display: flex;
-
-
-  }
-  #diary-img {
-    object-fit: scale-down;
-    width: 26px;
-    
-  }
   .wobble-hor-bottom {
     -webkit-animation: wobble-hor-bottom 2s infinite both;
             animation: wobble-hor-bottom 2s infinite both;
@@ -76,3 +61,26 @@
             transform: translateX(-6px) rotate(-1.2deg);
   }
 }
+@media (max-width:1536px) {
+  .Watch{
+    text-align: center;
+    width: 10vw;
+  }
+  .dp{
+    text-align: center;
+    width: 80vw;
+  }
+  .diap{
+    width: 100px;
+  }
+}
+  .diary_wrapper {
+    display: flex;
+
+
+  }
+  #diary-img {
+    object-fit: scale-down;
+    width: 26px;
+    
+  }
