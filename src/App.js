@@ -16,7 +16,8 @@ import { AdminLogin, AdminPage } from "features/admin";
 import { AppTasks } from "features/todo";
 import { Chatbot } from "features/chatbot";
 import { QnA, Setting } from "features/setting";
-import Test from "features/admin/components/Test";
+import SBChart from "features/admin/components/SBChart";
+import SBChartTest from "features/admin/components/SBChartTest";
 //Attempted import error: 'Action' is not exported from 'history'. histroy 버전 5로 업.
 //yarn add craco-alias @craco/craco
 
@@ -35,7 +36,7 @@ const App = () => {
         <Route path='/history/history' element={<History />} />
         <Route path='/suggestion/about' element={<About />} />
         <Route path='/calendar/calendar' element={<Calendar />} />
-        <Route path='/test/test' element={<Test/>} />
+        <Route path='/test/SBChartTest' element={<SBChartTest/>} />
         {/* <Route path='/test/test1' element={<Test />} /> */}
         {/* <Route path='/todo/task' element={<AppTasks />} /> */}
         <Route path='/admin/adminLogin' element={<AdminLogin />} />

@@ -24,10 +24,10 @@ function* exist(action: PayloadAction<ExistPayload>){
       action.payload
     );
     yield put(existSuccess(result));
-    alert("써도되는 아이디입니다.")
+    alert("가능한 아이디입니다.")
   } catch (error: any){
     yield put(existFailure(error))
-    alert("있는 아이디입니다.")
+    alert("쓸수없는 아이디입니다.")
   }
 }
 
@@ -38,7 +38,6 @@ function* join( action: PayloadAction<JoinPayload>){
       userAPI.joinAPI,
       action.payload
     );
-    alert(JSON.stringify(result))
     yield put(joinSuccess(result));
     window.location.href = 'users/login'
   } catch (error: any){

@@ -144,12 +144,12 @@ export default function Login3Page() {
                 disabled={_.isEmpty(dirtyFields) || !isValid}
                 type="submit"
               >
-                Login
+                로그인
               </Button>
             
               <div>
                 <Link className="font-normal" to="/users/removePwd">
-                  Forgot Password?
+                  비밀번호를 잊어버리셨나요?
                 </Link>
               </div>
              
@@ -166,7 +166,7 @@ export default function Login3Page() {
               <br/>
 
             <Button variant="outlined" color="primary" size="small" className="w-192 mb-8">
-              Log in with KaKao
+              KaKao 로그인
             </Button>
 
           </CardContent>
@@ -206,7 +206,6 @@ export default function Login3Page() {
         </div>
       </motion.div>
     </Root>
-   
     </LayOut>
   );
 }
