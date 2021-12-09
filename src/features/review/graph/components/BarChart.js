@@ -8,8 +8,8 @@ import { ResponsiveBar } from '@nivo/bar'
 const BarChart = ({ data /* see data tab */ }) => (<>
     <ResponsiveBar
         data={data}
-        keys={[ 'hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut' ]}
-        indexBy="country"
+        keys={[ 'visit', 'payment', 'study', 'workout', 'etc' ]}
+        indexBy="date"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
         valueScale={{ type: 'linear' }}
@@ -57,7 +57,7 @@ const BarChart = ({ data /* see data tab */ }) => (<>
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'country',
+            legend: 'date',
             legendPosition: 'middle',
             legendOffset: 32
         }}
@@ -65,7 +65,7 @@ const BarChart = ({ data /* see data tab */ }) => (<>
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'food',
+            legend: 'count',
             legendPosition: 'middle',
             legendOffset: -40
         }}
