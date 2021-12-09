@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BarChart, BarData, LineChart, LineData, LogChart, PieChart, PieData } from "features/review/index";
+import { BarChartG, BarDataG, LineChartG, LineDataG, LogChartG, PieChartG, PieDataG } from "features/review/index";
 import styled from 'styled-components'
 
 
@@ -8,24 +8,28 @@ export default function Goal() {
     <div style={{textAlign:"center"}}>
         <h1>Goal test</h1>
     </div>
-    <ChartDiv>
-        <BarChart data= {BarData}/>
-    </ChartDiv>
-    <ChartDiv>
-        <LineChart data= {LineData}/>
-    </ChartDiv>
-    <ChartDiv>
-        <PieChart data= {PieData}/>
-    </ChartDiv>
-    <ChartDiv>
-        <LogChart/>
-    </ChartDiv>
-
-
+    <table style={{textAlign:"center"}}>
+        <td>
+            <div style={{textAlign:"center"}}>
+                <h1>이만큼 Goal을 달성했어요!</h1>
+                <ChartDiv>
+                    <LineChartG data= {LineDataG}/>
+                </ChartDiv>
+            </div>
+        </td>
+        <td>
+            <div style={{textAlign:"center"}}>
+                <h1>이런 종류의 Goal 달성했어요!</h1>
+                <ChartDiv>
+                    <BarChartG data= {BarDataG}/>
+                </ChartDiv>
+            </div>
+        </td>
+    </table>
     </>)
 }
 const ChartDiv = styled.div`
     margin: 0 auto;
-    height: 400px;
-    width: 850px;
+    height: 500px;
+    width: 600px;
 `

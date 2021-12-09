@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, BarData, LineChart, LineData, LogChart, PieChart, PieData } from "features/review/index";
+import { BarChartR, BarDataR, LineChartR, LineDataR, LogChartR, PieChartR, PieDataR } from "features/review/index";
 import styled from 'styled-components'
 
 export default function Review() {
@@ -7,22 +7,28 @@ export default function Review() {
     <div style={{textAlign:"center"}}>
         <h1>Review test</h1>
     </div>
-    <ChartDiv>
-        <BarChart data= {BarData}/>
-    </ChartDiv>
-    <ChartDiv>
-        <LineChart data= {LineData}/>
-    </ChartDiv>
-    <ChartDiv>
-        <PieChart data= {PieData}/>
-    </ChartDiv>
-    <ChartDiv>
-        <LogChart/>
-    </ChartDiv>
+    <table style={{textAlign:"center"}}>
+        <td>
+            <div style={{textAlign:"center"}}>
+                <h1>이만큼 Routine을 달성했어요!</h1>
+                <ChartDiv>
+                    <LineChartR data= {LineDataR}/>
+                </ChartDiv>
+            </div>
+        </td>
+        <td>
+            <div style={{textAlign:"center"}}>
+                <h1>이런 종류의 Routine 달성했어요!</h1>
+                <ChartDiv>
+                    <BarChartR data= {BarDataR}/>
+                </ChartDiv>
+            </div>
+        </td>
+    </table>
     </>)
 }
 const ChartDiv = styled.div`
     margin: 0 auto;
-    height: 400px;
-    width: 850px;
+    height: 500px;
+    width: 600px;
 `
