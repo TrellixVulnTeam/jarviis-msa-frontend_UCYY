@@ -6,7 +6,5 @@ export default function History() {
     <LayOut>
         <HistoryMap/>
         <Timeline/>
-
-
     </LayOut>)
 }

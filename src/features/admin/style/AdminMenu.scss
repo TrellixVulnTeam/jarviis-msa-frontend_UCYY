@@ -174,3 +174,34 @@ ul .icon:hover {
   text-align: center;
   
 }
+@media (max-width: 2560px) {
+  .Admin {
+      width: 50vh;
+      margin-left: 660px;
+      margin-top: 50px;
+      margin-bottom: 300px;
+  }
+}
+@media (max-width: 1920px) {
+  .Admin {
+    margin-left: 451px;
+    margin-top: 115px;
+  }
+}
+@media (max-width: 1440px) {
+  .Admin {
+    margin-left: 233px;
+  }
+}
+@media (max-width: 1080px) {
+  .Admin {
+    margin-left: 61px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .Admin {
+    margin-left: 51px;
+
+  }
+}

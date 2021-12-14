@@ -13,6 +13,7 @@ import { LayOut } from 'features/common';
 import "features/common/font/font.scss"
 import 'features/common/style/image.scss'
 import 'features/user/style/UserLayout.scss'
+import 'features/admin/style/AdminMenu.scss'
 
 const Root = styled('div')(({ theme }) => ({
   '& .Login3-leftSection': {},
@@ -58,8 +59,7 @@ export default function AdminLogin() {
 
   return (
     <LayOut>
-      <div style={{ marginLeft: "419px",marginTop: "85px" ,height: "541px"}} className="User-container" >
-    <Root className="flex flex-col flex-auto items-center justify-center flex-shrink-0 p-16 md:p-24">
+    <Root className="Admin">
       <motion.div
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -174,7 +174,6 @@ export default function AdminLogin() {
         </div>
       </motion.div>
     </Root>
-    </div>
     </LayOut>
   );
 }

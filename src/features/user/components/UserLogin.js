@@ -19,6 +19,7 @@ import "features/common/font/font.scss"
 import 'features/common/style/image.scss'
 import 'features/user/style/UserLayout.scss'
 import { loginRequest } from '../reducer/userSlice';
+import 'features/user/style/UserLogin.scss'
 
 const Root = styled('div')(({ theme }) => ({
   '& .Login3-leftSection': {},
@@ -68,7 +69,7 @@ export default function Login3Page() {
 
   return (
     <LayOut>
-    <Root style={{width:"60vh",marginLeft:" 434px",marginTop:"-100px;", }} >
+    <Root className='UserLogin'>
       <motion.div
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
