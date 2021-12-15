@@ -149,7 +149,7 @@ export default function Login3Page() {
               </Button>
             
               <div>
-                <Link className="font-normal" to="/users/removePwd">
+                <Link className="font-normal" to="/users/forPwd">
                   비밀번호를 잊어버리셨나요?
                 </Link>
               </div>
@@ -176,7 +176,7 @@ export default function Login3Page() {
 
           <div className="flex flex-col items-center justify-center pb-32">
             <span className="font-normal">회원이 아니신가요?</span>&nbsp;&nbsp;
-            <Link className="font-normal" to="/users/Register">
+            <Link className="font-normal" to="/users/join">
               회원가입하기
             </Link>
           </div>

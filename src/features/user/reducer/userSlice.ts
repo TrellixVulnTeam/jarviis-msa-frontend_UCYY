@@ -17,9 +17,20 @@ export interface UserDataPayload {
 export interface ExistPayload{
   email: string;
 }
+export interface RemovePayload {
+  email: string;
+  password: string;
+}
 export interface LoginPayload {
   email: string;
   password: string;
+}
+export interface ModifyPayload {
+  email: string;
+  phone: string;
+  address: string;
+  password: string;
+  birth: string;
 }
 export interface JoinPayload {
   username: string;
@@ -28,6 +39,8 @@ export interface JoinPayload {
   address: string;
   password: string;
   birth: string;
+  job: string;
+  user_interests: string;
 }
 //미들웨어
 export interface UserState {
@@ -66,6 +79,7 @@ const userSlice = createSlice({
     },
     //join
     joinRequest(state: UserState, action: PayloadAction<JoinPayload>) {
+
       state.userLoading = true;
       state.error = null;
     },
@@ -78,7 +92,7 @@ const userSlice = createSlice({
       state.error = action.payload;
     },
      //modify
-    modifyRequest(state: UserState, action: PayloadAction<JoinPayload>){
+    modifyRequest(state: UserState, action: PayloadAction<ModifyPayload>){
       state.userLoading = true;
       state.error = null;
     },

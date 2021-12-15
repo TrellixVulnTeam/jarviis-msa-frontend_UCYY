@@ -12,7 +12,7 @@ import _ from '@lodash';
 import { LayOut } from 'features/common';
 import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { modify } from 'features/user/reducer/userSlice'
+// import { modify } from 'features/user/reducer/userSlice'
 /**
  * Form Validation Schema
  */
@@ -25,7 +25,7 @@ const defaultValues = {
 };
 
 
-function ForgotPasswordPage() {
+function ForgotPassword() {
   const { control, formState, handleSubmit, reset } = useForm({
     mode: 'onChange',
     defaultValues,
@@ -102,4 +102,4 @@ function ForgotPasswordPage() {
   );
 }
 
-export default ForgotPasswordPage;
+export default ForgotPassword;

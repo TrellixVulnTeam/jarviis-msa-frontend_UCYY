@@ -13,7 +13,7 @@ import _ from '@lodash';
 import { LayOut } from 'features/common'
 import 'features/user/style/UserLayout.scss'
 import "features/user/style/UserRegister.scss"
-import { CheckList } from '..';
+import 'features/user/style/Check.scss'
 import { existRequest, joinRequest } from '../reducer/userSlice';
 
 /**
@@ -42,6 +42,9 @@ const defaultValues = {
   birth: '',
   password: '',
   address: '',
+  user_interests:'',
+  job:''
+
 };
 
 export default function Register3Page() {
@@ -92,7 +95,11 @@ export default function Register3Page() {
                   name="registerForm"
                   noValidate
                   className="flex flex-col justify-center w-full"
-                  onSubmit={handleSubmit(async (data) => { await dispatch(joinRequest({ ...data, })) })}
+                  onSubmit={handleSubmit(async (data) => { await dispatch(joinRequest({
+                     ...data,
+                    //  user_interests: document.getElementsByName('user_interests'),
+                    // job:document.getElementsByName('job')
+                    })) })}
                 >
                   <Controller
                     name="username"
@@ -227,7 +234,116 @@ export default function Register3Page() {
                     )}
                   />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <CheckList/>
+
+                  <div className="wrap">
+                  <h4>Check List 작성하기</h4>
+                  <label component="legend">관심있는 직업이 무엇입니까?</label><br/>
+                  <Controller
+                    name="job"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                      <input className="checkbox"
+                        {...field}
+                        label="job"
+                        type="radio"
+                        value= "운동선수"
+                        id="select0"
+                     
+                        
+                      />
+                      <label for="select0" className="input-label checkbox" value= "운동선수">운동선수</label>
+                    </>)}
+                  />
+                   <Controller
+                    name="job"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                      <input className="checkbox"
+                        {...field}
+                        label="job"
+                        type="radio"
+                        value= "화가"
+                        id="select1"
+                        checked
+                      />
+                     <label for="select1" className="input-label checkbox" value= "화가">화가</label>
+                    </>)}
+                  />
+                
+                <Controller
+                    name="job"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                      <input className="checkbox"
+                        {...field}
+                        label="job"
+                        type="radio"
+                        value= "개발자"
+                        id="select2"
+                      />
+                     <label for="select2" className="input-label checkbox" value= "개발자">개발자</label>
+                    </>)}
+                  />
+                  <div>
+                  <label component="legend">취미가 무엇입니까?</label><br/>
+                   <Controller
+                    name="user_interests"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                      <input className="checkbox"
+                        {...field}
+                        label="user_interests"
+                        type="radio"
+                        value= "공연보기"
+                        id="select4"
+                        
+                      />
+                      <label for="select4" className="input-label checkbox" value= "공연보기">공연보기</label>
+                      </>
+                    )}
+                  />
+                   <Controller
+                    name="user_interests"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                      <input className="checkbox"
+                        {...field}
+                        label="user_interests"
+                        type="radio"
+                        value= "다이어트"
+                        id="select5"
+                        checked
+                      />
+                      <label for="select5" className="input-label checkbox" value= "다이어트">다이어트</label>
+                      </>
+                    )}
+                  />
+                 <Controller
+                    name="user_interests"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                      <input className="checkbox"
+                        {...field}
+                        label="user_interests"
+                        type="radio"
+                        value= "영화보기"
+                        id="select6"
+                      />
+                        <label for="select6" className="input-label checkbox" value= "영화보기">영화보기</label>
+                      </>
+                    )}
+                  />
+                
+                  </div>
+                  </div>
+              
+        
                     <Button style={{'margin-top' : '60px'}}
                     variant="contained"
                     color="primary"
@@ -271,9 +387,6 @@ export default function Register3Page() {
             </div>
           </motion.div>
         </div>
-        {/* <div style={{marginTop: "-442px"}}>
-        <CheckList/>
-        </div> */}
     </LayOut>
   );
 }

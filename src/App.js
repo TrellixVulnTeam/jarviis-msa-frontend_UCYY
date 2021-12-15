@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/users/login" element={<UserLogin />} />
         <Route path="/chatbot/chatbot" element={<Chatbot />} />
-        {/* <Route path='/users/removePwd' element={<ForgotPassword/>}/> */}
+        <Route path='/users/removePwd' element={<ForgotPassword/>}/>
         <Route path='/users/join' element={<UserRegister />} />
         <Route path='/diary/diary' element={<Diary />} />
         <Route path='/review/review' element={<Review />} />
