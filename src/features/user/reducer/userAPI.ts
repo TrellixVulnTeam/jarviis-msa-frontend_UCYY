@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ModifyPayload,ExistPayload, JoinPayload, LoginPayload, RemovePayload } from "./userSlice";
+import { ModifyPayload,ExistPayload, JoinPayload, LoginPayload, RemovePayload,TokenPayload } from "./userSlice";
 // const SERVER = "http://127.0.0.3:8000/api/";
 const SERVER = "http://127.0.0.1:3001/";
 const headers = {
@@ -9,6 +9,9 @@ const headers = {
 
 function loginAPI(data: LoginPayload) {
   return axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
+}
+function tokenAPI(data: TokenPayload){
+  return axios.get(`${SERVER}users/token/${data}`)
 }
 function joinAPI(data: JoinPayload) {
   alert(`${JSON.stringify(data)}`)

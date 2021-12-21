@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import 'features/setting/style/Setting.scss'
 import { UserModify } from 'features/user';
+import CommentList from 'features/board/containers/CommentList';
 
 const setting = () => {
    
@@ -20,7 +21,7 @@ const setting = () => {
             </div>
           <div className = "sg">
             <div >
-                <p data-aos='fade-down'>QNA 하드코딩 !!!!!!!!!!!!!!!!!</p>
+                <p data-aos='fade-down'><CommentList/></p>
             </div>
             <div >
                 <p data-aos="fade-down">

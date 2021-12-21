@@ -62,7 +62,6 @@ function* login(action: PayloadAction<LoginPayload>) {
       );
     //요청 성공시
     yield put(loginSuccess(result));
-    // alert(JSON.stringify(result.data.user.username))
     window.localStorage.setItem('sessionUser', JSON.stringify(result.data.user.username))
     window.localStorage.setItem('sessionModify', JSON.stringify(result.data.user))
     window.location.href= "/home"

@@ -1,6 +1,11 @@
 import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 //받아오는 데이터//
+
+export interface TokenDataPayload{
+  password: string;
+  email: string;
+}
 export interface UserDataPayload {
   data: {
     user: {
@@ -22,6 +27,10 @@ export interface RemovePayload {
   password: string;
 }
 export interface LoginPayload {
+  email: string;
+  password: string;
+}
+export interface TokenPayload{
   email: string;
   password: string;
 }
@@ -49,6 +58,7 @@ export interface UserState {
   userLoading: boolean;
   userData: any;
   error: any;
+  token:null;
 }
 // api의 param 타입
 export interface ParamType {
@@ -58,12 +68,25 @@ const initialState: UserState = {
   userLoading: false,
   userData: null,
   error: null,
+  token:null
 };
 
 const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
+    //thken
+    tokenRequest(state:UserState, _action:PayloadAction<TokenDataPayload>){
+      state.token = null;
+    }, 
+    tokenSuccess(state:UserState, action:PayloadAction<TokenPayload>){
+      state.token = null;
+      state.userData = action.payload;
+    },
+    tokenFailure(state: UserState, action: PayloadAction<{ error: any }>) {
+      state.userLoading = false;
+      state.error = action.payload;
+    },
     // Login
     loginRequest(state: UserState, _action: PayloadAction<LoginPayload>) {
       state.userLoading = true;
@@ -142,5 +165,8 @@ export const {
   joinFailure,
   joinRequest,
   joinSuccess,
+  tokenRequest,
+  tokenSuccess,
+  tokenFailure
 } = actions;
 export default reducer;
