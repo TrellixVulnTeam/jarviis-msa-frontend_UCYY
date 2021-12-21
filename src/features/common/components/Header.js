@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navi } from 'features/common';
+import { Link } from 'react-router-dom';
 
 
 
@@ -7,7 +8,7 @@ import { Navi } from 'features/common';
 const Header = () => {
   return (
     <header className="rg-header" >
-      <img class='logo' src={require("features/common/images/plan.gif").default}/>
+      <img type="but" class='logo' src={require("features/common/images/plan.gif").default}/>
       <Navi />
       <div class="search"><input type="search" placeholder="Search"></input></div>
     </header>

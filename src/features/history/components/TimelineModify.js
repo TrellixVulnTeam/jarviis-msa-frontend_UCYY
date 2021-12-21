@@ -17,7 +17,6 @@ export default function TimelineModify() {
     const today = new Date()
     return(<>
     {mode == 0 ?<>
-    <p><b>어떤 장소</b>에서 무엇을 했다! for문 돌려서 리스트 뽑기!!</p>
     <Button variant="text" onClick={()=> setMode(1)}>수정 하기</Button>
     <Button variant="text">삭제 하기</Button></>
      : <Box

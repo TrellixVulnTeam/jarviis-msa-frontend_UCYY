@@ -8,8 +8,7 @@ import {Provider} from 'react-redux'
 import 'features/suggestion/style/style.scss'
 //리덕스와 미들웨어 적용을 위해 필요한 모듈 불러오기
 import {createStore, applyMiddleware} from "redux";
-import rootReducer from "./features/user/module/index";
-import rootSaga from 'features/user/module';
+
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga"
 
@@ -19,6 +18,16 @@ const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 )
+//rootSaga 하나로 묶기 
+import { all, fork } from "redux-saga/effects";
+import { watchExist, watchJoin, watchLogin, watchModify } from "features/user/module/userSaga";
+import { watchCreate } from 'features/history/module/historySaga';
+import { rootReducer } from 'app/store';
+
+// rootSaga를 만들어줘서 store에 추가해주어야 합니다.
+export default function* rootSaga() {
+  yield all([fork(watchLogin),fork(watchJoin),fork(watchExist),fork(watchModify),fork(watchCreate)]);
+}
 
 //주의//
 sagaMiddleware.run(rootSaga)
@@ -37,4 +46,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-

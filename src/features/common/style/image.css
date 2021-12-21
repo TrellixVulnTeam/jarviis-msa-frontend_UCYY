@@ -11,8 +11,8 @@
 }
 
 .snoopy-img {
-  width: 150px;
-  height: 150px;
+  width: 15vh;
+  height: 15vh;
   -o-object-fit: fill;
      object-fit: fill;
 }

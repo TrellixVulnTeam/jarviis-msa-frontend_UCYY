@@ -5,12 +5,11 @@ import styled from 'styled-components'
 export default function Review() {
     return(<>
     <div style={{textAlign:"center"}}>
-        <h1>Review test</h1>
     </div>
     <table style={{textAlign:"center"}}>
         <td>
             <div style={{textAlign:"center"}}>
-                <h1>이만큼 Routine을 달성했어요!</h1>
+                <h1 style={{marginLeft: "-99px"}}>이만큼 Routine을 달성했어요!</h1>
                 <ChartDiv>
                     <LineChartR data= {LineDataR}/>
                 </ChartDiv>

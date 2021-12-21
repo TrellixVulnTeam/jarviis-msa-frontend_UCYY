@@ -6,7 +6,6 @@ import styled from 'styled-components'
 export default function Goal() {
     return(<>
     <div style={{textAlign:"center"}}>
-        <h1>Goal test</h1>
     </div>
     <table style={{textAlign:"center"}}>
         <td>

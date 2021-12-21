@@ -196,7 +196,7 @@
     }
   }
 }
-@media only screen and (max-width: 2560px) {
+@media(max-width: 2560px) {
   .team-area {
     width: 53vh;
     margin-left: 5vh;
@@ -206,41 +206,41 @@
     width: 621px;
   }
 }
-@media only screen and (max-width: 1920px) {
+@media(max-width: 1920px) {
   .team-area {
     width: 41vh;
     margin-left: -3vh;
     margin-top: -75vh;
   }
   .team-wrapper:hover .team-action {
-    width: 364px;
+    width: 39vh;
   }
 }
-@media only screen and (max-width: 1080px) {
+@media(max-width: 1080px) {
   .team-area {
     width: 33vh;
     margin-left: -11vh;
     margin-top: -81vh;
   }
   .team-wrapper:hover .team-action {
-    width: 261px;
+    width: 31vh;
   }
 }
-@media only screen and (width: 1440px) {
+@media(width: 1440px) {
   .team-area {
     width: 46vh;
     margin-left: -9vh;
-    margin-top: -106vh;
+    margin-top: -80vh;
   }
   .team-wrapper:hover .team-action {
-    width: 371px;
+    width: 44vh;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media(max-width: 1024px) {
   .team-area {
     width: 37vh;
     margin-left: -11vh;
-    margin-top: -110vh;
+    margin-top: -83vh;
   }
   .team-wrapper:hover .team-action {
     width: 295px;

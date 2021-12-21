@@ -1,18 +1,66 @@
+import { values } from 'lodash';
 import React, { memo, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import TimelineModify from './TimelineModify';
 // 참고한 블로그 : https://code-masterjung.tistory.com/99
 
 export default function TimelineLog() {
-  return (
-    <TimelineItem>
-            <Date>2021년 1월 2일 //날씨띄우기//</Date> 
-            <Title>이동 정보</Title>
-            <Contents>
-              <TimelineModify/>
-            </Contents>
-    </TimelineItem>
-  );
+  const juudata = [
+    {
+      "id": "25",
+      "location": "비트캠프",
+      "address": "서울 강남구 강남대로94길 20",
+      "x": "127.029037792462",
+      "y": "37.4994078625536",
+      "log_date": "2021-12-20 05:06:55+00:00",
+      "weather": "맑음",
+      "log_type": "normal",
+      "contents": "밥을 먹어요",
+      "user_id": "1"
+    },
+    {
+      "id": "26",
+      "location": "비트캠프",
+      "address": "서울 강남구 강남대로94길 20",
+      "x": "127.029037792462",
+      "y": "37.4994078625536",
+      "log_date": "2021-12-20 04:08:39+00:00",
+      "weather": "흐림",
+      "log_type": "normal",
+      "contents": "자바 공부했습니다",
+      "user_id": "1"
+    },
+    {
+      "id": "27",
+      "location": "비트캠프",
+      "address": "서울 강남구 강남대로94길 20",
+      "x": "127.029037792462",
+      "y": "37.4994078625536",
+      "log_date": "2021-12-20 08:24:00+00:00",
+      "weather": "맑음",
+      "log_type": "study",
+      "contents": "파이썬 알고리즘 공부를 했다",
+      "user_id": "1"
+    }
+  ]
+
+  const test = juudata.map((value, index, array) => {
+    return (
+      <TimelineItem>
+        <Date>{value.log_date} ..<b>{value.weather}</b></Date>
+        <Title>{value.log_type}</Title>
+        <Contents>
+          <p><b>{value.location}</b>에서 {value.contents}</p>
+          <TimelineModify />
+        </Contents>
+      </TimelineItem>
+    )
+
+  })
+
+  return (<>
+    {test}
+  </>);
 };
 
 const Container = styled.div`
@@ -36,11 +84,12 @@ const Date = styled.span`
   border-radius: 16px;
 `;
 
-const Title = styled.h3`
+const Title = styled.h4`
   margin: 16px 0 0;
   padding: 0;
   color: dimgray;
   opacity: 0.8;
+  text-align:left;
 `;
 
 const Contents = styled.p`

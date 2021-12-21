@@ -38,7 +38,9 @@ function* exist(action: PayloadAction<ExistPayload>){
 
 function* join( action: PayloadAction<JoinPayload>){
   try{
+    console.log(action)
     const result : UserDataPayload = yield call(
+      
       userAPI.joinAPI,
       action.payload
     );
