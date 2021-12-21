@@ -53,7 +53,6 @@ function* join( action: PayloadAction<JoinPayload>){
 }
 function* login(action: PayloadAction<LoginPayload>) {
   try {
-    alert("보냈지롱")
     // fork는 비동기 call은 동기
     // fork를 쓰면 불러온것들을 result에 넣어줘야 하는데 바로 다음코드가 실행됨
     // 블로그에 있는 코드로는 yield 생성기 에러 자꾸남.... => const result = yield call(userAPI.join, action.payload);
@@ -61,11 +60,11 @@ function* login(action: PayloadAction<LoginPayload>) {
       userAPI.loginAPI,
       action.payload
       );
-      alert("보냈지롱2")
     //요청 성공시
     yield put(loginSuccess(result));
     // alert(JSON.stringify(result.data.user.username))
     window.localStorage.setItem('sessionUser', JSON.stringify(result.data.user.username))
+    window.localStorage.setItem('sessionEmail', JSON.stringify(result.data.user.email))
     window.location.href= "/home"
   } catch (error: any) {
     alert(JSON.stringify(action.payload))
@@ -80,6 +79,7 @@ function* modify (action:PayloadAction<ModifyPayload>){
       action.payload
     );
     yield put(modifySuccess(result));
+    
   } catch (error: any){
     // alert("아이디오류")
     yield put(modifyFailure(error));

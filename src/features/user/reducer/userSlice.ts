@@ -31,6 +31,8 @@ export interface ModifyPayload {
   address: string;
   password: string;
   birth: string;
+  job: string;
+  user_interests: string;
 }
 export interface JoinPayload {
   username: string;
