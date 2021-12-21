@@ -64,7 +64,7 @@ function* login(action: PayloadAction<LoginPayload>) {
     yield put(loginSuccess(result));
     // alert(JSON.stringify(result.data.user.username))
     window.localStorage.setItem('sessionUser', JSON.stringify(result.data.user.username))
-    window.localStorage.setItem('sessionEmail', JSON.stringify(result.data.user.email))
+    window.localStorage.setItem('sessionModify', JSON.stringify(result.data.user))
     window.location.href= "/home"
   } catch (error: any) {
     alert(JSON.stringify(action.payload))

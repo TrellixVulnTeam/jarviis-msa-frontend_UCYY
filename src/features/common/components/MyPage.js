@@ -8,7 +8,7 @@ import { LogOut } from "features/user";
 
 export default function mypage() {
     
-    const sessionUser = localStorage.getItem("sessionUser")
+    const sessionUser = JSON.parse(localStorage.getItem("sessionUser"))
     // alert(sessionUser)
     // const history = useHistory()
     return (

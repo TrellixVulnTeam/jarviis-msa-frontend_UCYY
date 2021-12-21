@@ -80,40 +80,39 @@ const userSlice = createSlice({
       state.error = action.payload;
     },
     //join
-    joinRequest(state: UserState, action: PayloadAction<JoinPayload>) {
-
+    joinRequest(state: UserState, _action: PayloadAction<JoinPayload>) {
       state.userLoading = true;
       state.error = null;
     },
     joinSuccess(state: UserState, action: PayloadAction<UserDataPayload>) {
       state.userLoading = false;
-      state.error = action.payload;
+      state.userData = action.payload;
     },
     joinFailure(state: UserState, action: PayloadAction<{ error: any }>) {
       state.userLoading = false;
       state.error = action.payload;
     },
      //modify
-    modifyRequest(state: UserState, action: PayloadAction<ModifyPayload>){
+    modifyRequest(state: UserState, _action: PayloadAction<ModifyPayload>){
       state.userLoading = true;
       state.error = null;
     },
     modifySuccess(state: UserState, action: PayloadAction<UserDataPayload>){
       state.userLoading = false;
-      state.error = action.payload;
+      state.userData = action.payload;
     },
     modifyFailure(state: UserState, action: PayloadAction<{ error: any }>){
       state.userLoading = false;
       state.error = action.payload;
     },
     //exist
-    existRequest(state: UserState, action:PayloadAction<ExistPayload>){
+    existRequest(state: UserState, _action:PayloadAction<ExistPayload>){
       state.userLoading = true;
       state.error = null;
     },
     existSuccess(state: UserState, action: PayloadAction<UserDataPayload>){
       state.userLoading = false;
-      state.error = action.payload;
+      state.userData = action.payload;
     },
     existFailure(state: UserState, action: PayloadAction<{ error: any }>){
       state.userLoading = true;

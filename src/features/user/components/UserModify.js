@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { motion } from 'framer-motion';
 import { Controller, useForm } from 'react-hook-form';
 import Button from '@mui/material/Button';
@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import _ from '@lodash';
 import 'features/user/style/UserModify.scss'
+import { modifyRequest } from '../reducer/userSlice';
 
 
 const ModifyValues = {
@@ -24,7 +25,7 @@ const ModifyValues = {
 
 };
 export default function UserModify() {
-    const sessionEmail = localStorage.getItem('sessionEmail')
+    const sessionUser = JSON.parse(window.localStorage.getItem('sessionModify'))
     const { control, formState, handleSubmit, reset, getValues } = useForm({
         mode: 'onChange',
         ModifyValues,
@@ -36,6 +37,7 @@ export default function UserModify() {
     function onSubmit() {
         reset(ModifyValues);
     }
+    
     return (
         <div className="Modify-sc">
             <Card
@@ -47,14 +49,15 @@ export default function UserModify() {
                         color="textSecondary"
                     >
                         회원정보 수정하기
+                        <p>{sessionUser.username}</p>
                     </Typography>
                     <form
                         name="modifyForm"
                         noValidate
                         className="flex flex-col justify-center w-full"
-                    //   onSubmit={handleSubmit(async (data) => { await dispatch(joinRequest({
-                    //      ...data,
-                    //     })) })}
+                      onSubmit={handleSubmit(async (data) => { await dispatch(modifyRequest({
+                         ...data,
+                        })) })}
                     >
                         <Controller
                             name="username"
@@ -68,6 +71,7 @@ export default function UserModify() {
                                     type="username"
                                     error={!!errors.username}
                                     helperText={errors?.username?.message}
+                                    placeholder={sessionUser.username}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -84,7 +88,7 @@ export default function UserModify() {
                         className="mb-16"
                         label="Email"
                         type="email"
-                        value={sessionEmail}
+                        value={sessionUser.email}
                         fullWidth
                       />
                     )}
@@ -102,6 +106,7 @@ export default function UserModify() {
                                     type="text"
                                     error={!!errors.phone}
                                     helperText={errors?.phone?.message}
+                                    placeholder={sessionUser.phone}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -120,6 +125,7 @@ export default function UserModify() {
                                     type="text"
                                     error={!!errors.birth}
                                     helperText={errors?.birth?.message}
+                                    placeholder={sessionUser.birth}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -137,6 +143,7 @@ export default function UserModify() {
                                     type="address"
                                     error={!!errors.address}
                                     helperText={errors?.address?.message}
+                                    placeholder={sessionUser.address}
                                     variant="outlined"
                                     fullWidth
                                 />
