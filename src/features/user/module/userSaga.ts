@@ -17,6 +17,7 @@ import {
   ModifyPayload,
   modifySuccess,
   modifyFailure,
+  modifyRequest,
 } from "features/user/reducer/userSlice";
 import { userAPI } from "features/user";
 import { func } from "prop-types";
@@ -50,6 +51,7 @@ function* exist(action: PayloadAction<ExistPayload>) {
       alert("가능한 아이디입니다.")
     } catch (error: any) {
       yield put(existFailure(error))
+      alert(error)
       alert("쓸수없는 아이디입니다.")
     }
   }
@@ -72,27 +74,25 @@ function* exist(action: PayloadAction<ExistPayload>) {
   }
   function* login(action: PayloadAction<LoginPayload>) {
     try {
-      // fork는 비동기 call은 동기
-      // fork를 쓰면 불러온것들을 result에 넣어줘야 하는데 바로 다음코드가 실행됨
-      // 블로그에 있는 코드로는 yield 생성기 에러 자꾸남.... => const result = yield call(userAPI.join, action.payload);
       const result: UserDataPayload = yield call(
         userAPI.loginAPI,
         action.payload
       );
-      alert(`===============payload=================${JSON.stringify(action.payload)}`)
+      console.log(`===========================서버에서 받은 값${JSON.stringify(result)}`)
+      // alert(`===============payload=================${JSON.stringify(action.payload)}`)
       // const token: UserDataPayload = yield call(
       //   userAPI.tokenAPI,
       //   action_t.payload
       // );
       //요청 성공시
       yield put(loginSuccess(result));
-      alert(`=============result===================${JSON.parse(JSON.stringify(result.data.user))}`)
+      alert(`=============result===================${JSON.stringify(result.data.user)}`)
       alert(`=============token===================${JSON.stringify(result.data.user.token)}`)
-      window.localStorage.setItem('sessionToken', result.data.user.token)
+      // window.localStorage.setItem('sessionToken', result.data.user.token)
       window.localStorage.setItem('sessionUser', JSON.stringify(result.data.user))
       // window.localStorage.setItem('sessionUser', JSON.stringify(result.config.data.username))
       // window.localStorage.setItem('sessionModify', JSON.stringify(result.config.data))
-      alert(`============= sessionToken - saved ===================${window.localStorage.getItem('sessionToken')}`)
+      // alert(`============= sessionToken - saved ===================${window.localStorage.getItem('sessionToken')}`)
       alert(`============= sessionUser - saved ===================${window.localStorage.getItem('sessionUser')}`)
       window.location.href = "/home"
     } catch (error: any) {
@@ -103,11 +103,13 @@ function* exist(action: PayloadAction<ExistPayload>) {
   }
   function* modify(action: PayloadAction<ModifyPayload>) {
     try {
+      alert("들엄옴~")
       const result: UserDataPayload = yield call(
         userAPI.modifyAPI,
         action.payload
       );
       yield put(modifySuccess(result));
+      alert("석세스~")
 
     } catch (error: any) {
       // alert("아이디오류")
@@ -128,5 +130,5 @@ function* exist(action: PayloadAction<ExistPayload>) {
     yield takeLatest(existRequest.type, exist);
   }
   export function* watchModify() {
-    yield takeLatest(existRequest.type, modify);
+    yield takeLatest(modifyRequest.type, modify);
   }

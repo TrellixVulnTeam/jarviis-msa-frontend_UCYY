@@ -54,10 +54,7 @@ export interface LoginPayload {
   address: string;
   birth: string;
 }
-export interface TokenPayload {
-  email: string;
-  password: string;
-}
+
 export interface ModifyPayload {
   email: string;
   phone: string;

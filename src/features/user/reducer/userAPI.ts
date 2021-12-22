@@ -1,7 +1,7 @@
 import axios from "axios";
-import { ModifyPayload,ExistPayload, JoinPayload, LoginPayload, RemovePayload,TokenPayload } from "./userSlice";
-// const SERVER = "http://127.0.0.3:8000/api/";
-const SERVER = "http://127.0.0.1:3001/";
+import { ModifyPayload,ExistPayload, JoinPayload, LoginPayload, RemovePayload } from "./userSlice";
+const SERVER = "http://127.0.0.1:8000/api/";
+// const SERVER = "http://127.0.0.1:3001/";
 const headers = {
   "Content-Type": "application/json",
   Authorization: "JWT fefege..",
@@ -10,14 +10,22 @@ const headers = {
 function loginAPI(data: LoginPayload) {
   return axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
 }
+//장고연결
 function joinAPI(data: JoinPayload) {
   alert(`${JSON.stringify(data)}`)
-  return axios.post(`${SERVER}users/join`, JSON.stringify(data), { headers });
+  alert("간다!!!!!!!!!!!!!!!!!!")
+  return axios.post(`${SERVER}users/`, JSON.stringify(data), { headers });
 }
+// function joinAPI(data: JoinPayload) {
+//   alert(`${JSON.stringify(data)}`)
+//   return axios.post(`${SERVER}users/join`, JSON.stringify(data), { headers });
+// }
 function existAPI(data: ExistPayload) {
+  alert("간다!!!!!!!!!!!!!!!!!!")
   return axios.get(`${SERVER}users/exist/${data}`);
 }
 function modifyAPI(data: ModifyPayload) {
+  alert("API")
   return axios.put(`${SERVER}users/modify/${data}`);
 }
 function removeAPI(data: RemovePayload) {
