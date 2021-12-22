@@ -10,9 +10,6 @@ const headers = {
 function loginAPI(data: LoginPayload) {
   return axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
 }
-function tokenAPI(data: TokenPayload){
-  return axios.get(`${SERVER}users/token/${data}`)
-}
 function joinAPI(data: JoinPayload) {
   alert(`${JSON.stringify(data)}`)
   return axios.post(`${SERVER}users/join`, JSON.stringify(data), { headers });
@@ -40,7 +37,7 @@ export default {
   listAPI,
   removeAPI,
   modifyAPI,
-  findAPI
+  findAPI,
   
 
 };

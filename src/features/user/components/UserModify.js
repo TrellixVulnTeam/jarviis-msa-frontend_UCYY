@@ -25,7 +25,7 @@ const ModifyValues = {
 
 };
 export default function UserModify() {
-    const sessionUser = JSON.parse(window.localStorage.getItem('sessionModify'))
+    const sessionUser = JSON.parse(window.localStorage.getItem('sessionUser'))
     const { control, formState, handleSubmit, reset, getValues } = useForm({
         mode: 'onChange',
         ModifyValues,
@@ -49,7 +49,7 @@ export default function UserModify() {
                         color="textSecondary"
                     >
                         회원정보 수정하기
-                        <p>{sessionUser.username}</p>
+                        {/* <p>{sessionUser.username}</p> */}
                     </Typography>
                     <form
                         name="modifyForm"
@@ -71,7 +71,7 @@ export default function UserModify() {
                                     type="username"
                                     error={!!errors.username}
                                     helperText={errors?.username?.message}
-                                    placeholder={sessionUser.username}
+                                    // placeholder={sessionUser.username}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -106,7 +106,7 @@ export default function UserModify() {
                                     type="text"
                                     error={!!errors.phone}
                                     helperText={errors?.phone?.message}
-                                    placeholder={sessionUser.phone}
+                                    // placeholder={sessionUser.phone}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -125,7 +125,7 @@ export default function UserModify() {
                                     type="text"
                                     error={!!errors.birth}
                                     helperText={errors?.birth?.message}
-                                    placeholder={sessionUser.birth}
+                                    // placeholder={sessionUser.birth}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -143,7 +143,7 @@ export default function UserModify() {
                                     type="address"
                                     error={!!errors.address}
                                     helperText={errors?.address?.message}
-                                    placeholder={sessionUser.address}
+                                    // placeholder={sessionUser.address}
                                     variant="outlined"
                                     fullWidth
                                 />

@@ -18,7 +18,7 @@ import { LayOut } from 'features/common';
 import "features/common/font/font.scss"
 import 'features/common/style/image.scss'
 import 'features/user/style/UserLayout.scss'
-import { loginRequest } from '../reducer/userSlice';
+import { loginRequest, tokenRequest } from '../reducer/userSlice';
 import 'features/user/style/UserLogin.scss'
 
 const Root = styled('div')(({ theme }) => ({
@@ -50,6 +50,8 @@ const defaultValues = {
   username: '',
   birth: '',
   address: '',
+  user_interests: '',
+  job: '',
 };
 
 export default function Login3Page() {

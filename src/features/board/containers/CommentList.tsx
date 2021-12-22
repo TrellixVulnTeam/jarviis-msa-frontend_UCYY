@@ -16,7 +16,7 @@ interface Props {
 const CommentList: React.FC<Props> = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [comments, setComments] = useState<Array<Comment>>([]);
-  const token = useSelector((state: any) => state.Auth.token);
+  // const token = useSelector((state: any) => state.Auth.token);
 
   useEffect(() => {
     console.log(props.history);
@@ -40,9 +40,10 @@ const CommentList: React.FC<Props> = (props) => {
     const form = event.currentTarget;
 
     const comment = {
+      
       board_id: props.board_id,
       content: form.commentText.value,
-      user_id: jwtUtils.getId(token)
+      // user_id: jwtUtils.getId(token)
     }
 
     // let res = await api.post('/api/comment', comment);
@@ -56,11 +57,11 @@ const CommentList: React.FC<Props> = (props) => {
     form.commentText.value = '';
   };
 
-  const handleFocus = () => {
-    if (!jwtUtils.isAuth(token)) {
-      setShowModal(true);
-    }
-  }
+  // const handleFocus = () => {
+  //   if (!jwtUtils.isAuth(token)) {
+  //     setShowModal(true);
+  //   }
+  // }
 
   const onCancel = () => {
     setShowModal(false);
@@ -77,7 +78,8 @@ const CommentList: React.FC<Props> = (props) => {
       <Form className="mb-4" onSubmit={handleSubmit}>
         <Form.Group controlId="commentText">
           <Form.Label>댓글</Form.Label>
-          <Form.Control required as="textarea" rows={4} onClick={handleFocus} />
+          {/* <Form.Control required as="textarea" rows={4} onClick={handleFocus} /> */}
+         <Form.Control required as="textarea" rows={4}  />
         </Form.Group>
         <Button variant="primary" type="submit">
           등록

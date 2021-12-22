@@ -8,8 +8,8 @@ import { LogOut } from "features/user";
 
 export default function mypage() {
     
-    const sessionUser = JSON.parse(localStorage.getItem("sessionUser"))
-    // alert(sessionUser)
+    const sessionUser = JSON.parse(window.localStorage.getItem("sessionUser"))
+    // alert(JSON.parse(sessionUser).email)
     // const history = useHistory()
     return (
         <>
@@ -28,7 +28,7 @@ export default function mypage() {
         {localStorage.length > 0 ?
         <form className="mypage" id="jello-horizontal" >
              <div className="myp">
-            <h4>{sessionUser}님 안녕하세요!</h4>
+            <h4>{JSON.parse(sessionUser).email}님 안녕하세요!</h4>
             <img className='snoopy-img' src={require("../images/snoopy.png").default} /><br />
             <h5>be with you</h5>
             <div>
