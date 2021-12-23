@@ -115,16 +115,13 @@
         "web-vitals": "2.1.2",
         "yup": "0.32.11"
     },
-   
     "peerDependencies": {
         "autoprefixer": "9.8.8",
         "postcss": "8.3.11",
         "react": "17.0.2",
         "react-dom": "17.0.2"
     },
-    
     "proxy": "http://127.0.0.3:8000/api/",
-    
     "resolutions": {
         "react": "17.0.2",
         "react-dom": "17.0.2",
@@ -168,7 +165,6 @@
         "analyze": "craco build && source-map-explorer 'build/static/js/*.js' --html analyze-result.html",
         "lint": "eslint"
     },
-    
     "engines": {
         "node": ">=14.0.0",
         "npm": ">=7.0.0"

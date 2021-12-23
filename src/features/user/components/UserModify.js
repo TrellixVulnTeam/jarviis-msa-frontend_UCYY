@@ -13,19 +13,30 @@ import 'features/user/style/UserModify.scss'
 import { modifyRequest } from '../reducer/userSlice';
 
 
-const defaultValues = {
-    username: '',
-    email: '',
-    phone: '',
-    birth: '',
-    password: '',
-    address: '',
-    user_interests: '',
-    job: ''
+// const defaultValues = {
+//     username: '',
+//     email: '',
+//     phone: '',
+//     birth: '',
+//     password: '',
+//     address: '',
+//     user_interests: '',
+//     job: ''
 
-};
+// };
 export default function UserModify() {
     const sessionUser = JSON.parse(window.localStorage.getItem('sessionUser'))
+    const defaultValues = {
+        username: sessionUser.username,
+        email: sessionUser.email,
+        phone: sessionUser.phone,
+        birth: sessionUser.birth,
+        password: sessionUser.password,
+        address: sessionUser.address,
+        user_interests: sessionUser.user_interests,
+        job: sessionUser.job
+    
+    };
     const { control, formState, handleSubmit, reset, getValues } = useForm({
         mode: 'onChange',
         defaultValues,
@@ -49,7 +60,7 @@ export default function UserModify() {
                         color="textSecondary"
                     >
                         회원정보 수정하기
-                        {/* <p>{sessionUser.username}</p> */}
+                        {/* <p>{defaultValues.username}</p> */}
                     </Typography>
                     <form
                         name="modifyForm"
@@ -72,7 +83,6 @@ export default function UserModify() {
                                     type="username"
                                     error={!!errors.username}
                                     helperText={errors?.username?.message}
-                                    placeholder={sessionUser.username}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -107,7 +117,6 @@ export default function UserModify() {
                                     type="text"
                                     error={!!errors.phone}
                                     helperText={errors?.phone?.message}
-                                    placeholder={sessionUser.phone}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -126,7 +135,6 @@ export default function UserModify() {
                                     type="text"
                                     error={!!errors.birth}
                                     helperText={errors?.birth?.message}
-                                    placeholder={sessionUser.birth}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -144,7 +152,6 @@ export default function UserModify() {
                                     type="address"
                                     error={!!errors.address}
                                     helperText={errors?.address?.message}
-                                    placeholder={sessionUser.address}
                                     variant="outlined"
                                     fullWidth
                                 />

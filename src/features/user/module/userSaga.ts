@@ -18,6 +18,7 @@ import {
   modifySuccess,
   modifyFailure,
   modifyRequest,
+  UserLoginDataPayload,
 } from "features/user/reducer/userSlice";
 import { userAPI } from "features/user";
 import { func } from "prop-types";
@@ -74,7 +75,7 @@ function* exist(action: PayloadAction<ExistPayload>) {
   }
   function* login(action: PayloadAction<LoginPayload>) {
     try {
-      const result: UserDataPayload = yield call(
+      const result: UserLoginDataPayload = yield call(
         userAPI.loginAPI,
         action.payload
       );
@@ -86,13 +87,15 @@ function* exist(action: PayloadAction<ExistPayload>) {
       // );
       //요청 성공시
       yield put(loginSuccess(result));
-      alert(`=============result===================${JSON.stringify(result.data.user)}`)
-      alert(`=============token===================${JSON.stringify(result.data.user.token)}`)
-      // window.localStorage.setItem('sessionToken', result.data.user.token)
-      window.localStorage.setItem('sessionUser', JSON.stringify(result.data.user))
+      alert(`============= raw ===================${JSON.stringify(result)}`)
+      console.log(`============= raw ===================${JSON.stringify(result)}`)
+      alert(`============= result ===================${JSON.parse(JSON.stringify(result.config.data))}`)
+      alert(`=============token===================${JSON.parse(JSON.stringify(result.data.token))}`)
+      window.localStorage.setItem('sessionToken', JSON.parse(JSON.stringify(result.data.token)))
+      window.localStorage.setItem('sessionUser', JSON.parse(JSON.stringify(result.config.data)))
       // window.localStorage.setItem('sessionUser', JSON.stringify(result.config.data.username))
       // window.localStorage.setItem('sessionModify', JSON.stringify(result.config.data))
-      // alert(`============= sessionToken - saved ===================${window.localStorage.getItem('sessionToken')}`)
+      alert(`============= sessionToken - saved ===================${window.localStorage.getItem('sessionToken')}`)
       alert(`============= sessionUser - saved ===================${window.localStorage.getItem('sessionUser')}`)
       window.location.href = "/home"
     } catch (error: any) {
@@ -103,13 +106,18 @@ function* exist(action: PayloadAction<ExistPayload>) {
   }
   function* modify(action: PayloadAction<ModifyPayload>) {
     try {
-      alert("들엄옴~")
-      const result: UserDataPayload = yield call(
+      const result: UserLoginDataPayload = yield call(
         userAPI.modifyAPI,
         action.payload
       );
       yield put(modifySuccess(result));
-      alert("석세스~")
+      // const test = result.config.data
+      // alert(`result? :: ${test} :: type :: ${typeof test}`)
+      // alert(`result parse :: ${JSON.parse(JSON.stringify(test))} :: type :: ${typeof JSON.parse(JSON.stringify(test))}`)
+      window.localStorage.setItem('sessionUser', JSON.parse(JSON.stringify(result.config.data)))
+      // alert(`SESSION 저장됨? ${window.localStorage.getItem('sessionUser')}`)
+      window.location.href = "/mypage/setting"
+
 
     } catch (error: any) {
       // alert("아이디오류")
