@@ -1,10 +1,15 @@
+
+//받아오는 데이터
 export interface Board {
-  id?: number;
-  title: string;
-  content: string;
-  created?: string;
-  updated?: string;
-  user?: User;
+
+    id?: number;
+    title: string;
+    content: string;
+    created?: string;
+    updated?: string;
+    user?: User;
+
+  
 }
 export interface Comment {
     id?: number;

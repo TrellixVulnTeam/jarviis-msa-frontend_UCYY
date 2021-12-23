@@ -1,17 +1,17 @@
 import axios from "axios";
 import { ModifyPayload,ExistPayload, JoinPayload, LoginPayload, RemovePayload } from "./userSlice";
-const SERVER = "http://127.0.0.1:8000/api/";
-// const SERVER = "http://127.0.0.1:3001/";
+// const SERVER = "http://127.0.0.1:8000/api/";
+const SERVER = "http://127.0.0.1:3001/";
 const headers = {
   "Content-Type": "application/json",
   Authorization: "JWT fefege..",
 };
 
 function loginAPI(data: LoginPayload) {
-  // return axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
-  const test = axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
-  alert(` API data :: ${JSON.stringify(test)}`)
-  return test
+  return axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
+//   const test = axios.post(`${SERVER}users/login`, JSON.stringify(data), { headers });
+//   alert(` API data :: ${JSON.stringify(test)}`)
+//   return test
 }
 //장고연결
 // function joinAPI(data: JoinPayload) {

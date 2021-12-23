@@ -15,7 +15,7 @@ import { Calendar } from "features/calendar";
 import { AdminLogin, AdminPage } from "features/admin";
 import { AppTasks } from "features/todo";
 import { Chatbot } from "features/chatbot";
-import { QnA, Setting } from "features/setting";
+import { QnACreate, Setting } from "features/setting";
 import SBChart from "features/admin/components/SBChart";
 import SBChartTest from "features/admin/components/SBChartTest";
 //Attempted import error: 'Action' is not exported from 'history'. histroy 버전 5로 업.
@@ -41,7 +41,7 @@ const App = () => {
         {/* <Route path='/todo/task' element={<AppTasks />} /> */}
         <Route path='/admin/adminLogin' element={<AdminLogin />} />
         <Route path='/admin' element={<AdminPage />} />
-        <Route path='/qna/QnA' element={<QnA/>} />
+        <Route path='/qna/QnA' element={<QnACreate/>} />
         <Route path='/mypage/setting' element={<Setting/>} />
       </Routes>
     </div>

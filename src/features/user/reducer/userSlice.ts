@@ -18,6 +18,16 @@ export interface UserDataPayload {
 }
 export interface UserLoginDataPayload {
   data: {
+    userData: {
+      username: string;
+      email: string;
+      phone: string;
+      address: string;
+      password: string;
+      birth: string;
+    }
+    tokenData: string
+    
     token: string
   }
   // status: number,
@@ -36,6 +46,27 @@ export interface UserLoginDataPayload {
 
   }
 }
+// export interface UserLoginDataPayload {
+//   data: {
+    
+//     token: string
+//   }
+//   // status: number,
+//   // statusText: string,
+//   // content_length: string
+//   // content_type: string
+//   config: {
+//     data: {
+//       username: string;
+//       email: string;
+//       phone: string;
+//       address: string;
+//       password: string;
+//       birth: string;
+//     }
+
+//   }
+// }
 
 //요청하는 데이터
 export interface ExistPayload {

@@ -4,7 +4,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import 'features/setting/style/Setting.scss'
 import { UserModify } from 'features/user';
-import CommentList from 'features/board/containers/CommentList';
+import CommentList from 'features/board/components/CommentList';
+import Board from 'features/board/containers/Board';
+
 
 const setting = () => {
    
@@ -21,7 +23,9 @@ const setting = () => {
             </div>
           <div className = "sg">
             <div >
-                <p data-aos='fade-down'><CommentList/></p>
+                <p data-aos='fade-down'>
+                    <p>QnA 등록</p>
+                    <Board/></p>
             </div>
             <div >
                 <p data-aos="fade-down">
