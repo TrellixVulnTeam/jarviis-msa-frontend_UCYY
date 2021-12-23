@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Button, Row, Modal } from 'react-bootstrap';
-import { Board } from '../reducer/boardSlice';
+import { BoardData } from '../reducer/boardSlice';
 
 
 const BoardView = ({match, history}: any) => {
-  const [board, setBoard] = useState<Board>({
+  const [board, setBoard] = useState<BoardData>({
     title: '',
     content: ''
   });

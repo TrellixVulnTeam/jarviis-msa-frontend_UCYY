@@ -6,8 +6,9 @@ import {
 import logger from 'redux-logger'
 import user from 'features/user/reducer/userSlice';
 import history from 'features/history/reducer/historySlice'
+import board from 'features/board/reducer/boardSlice'
 
-export const rootReducer = combineReducers({ user, history }) //리듀서에 유저스라는 이름으로있지만 리듀서밖에서는 유저라고부를거야!
+export const rootReducer = combineReducers({ user, history, board }) //리듀서에 유저스라는 이름으로있지만 리듀서밖에서는 유저라고부를거야!
 
 export const store = configureStore({
   reducer: rootReducer,

@@ -19,6 +19,7 @@ import {
   modifyFailure,
   modifyRequest,
   UserLoginDataPayload,
+  UserModifyDataPayload,
 } from "features/user/reducer/userSlice";
 import { userAPI } from "features/user";
 import { func } from "prop-types";
@@ -106,7 +107,7 @@ function* exist(action: PayloadAction<ExistPayload>) {
   }
   function* modify(action: PayloadAction<ModifyPayload>) {
     try {
-      const result: UserLoginDataPayload = yield call(
+      const result: UserModifyDataPayload = yield call(
         userAPI.modifyAPI,
         action.payload
       );

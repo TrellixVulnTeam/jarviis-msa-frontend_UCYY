@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Board } from "../reducer/boardSlice";
+import { BoardData } from "../reducer/boardSlice";
 import {Button, Form} from "react-bootstrap";
 
 
 const BoardEdit: React.FC = ({match, history}: any) => {
     const [validated, setValidated] = useState(false);
     // 게시판의 제목과 내용을 state로 관리
-    const [board, setBoard] = useState<Board>({
+    const [board, setBoard] = useState<BoardData>({
       title: '',
       content: ''
     });

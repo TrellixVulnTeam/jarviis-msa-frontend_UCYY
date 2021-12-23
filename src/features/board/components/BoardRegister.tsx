@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {Button, Form} from "react-bootstrap";
+import { BoardData, createRequest } from "../reducer/boardSlice";
 
 
 const BoardRegister: React.FC = (props: any) => {
@@ -22,15 +23,14 @@ const BoardRegister: React.FC = (props: any) => {
       title: form.titleInput.value,
       content: form.contentText.value
     }
-    // addBoard(board);
+    addBoard(board);
  
     props.history.push('/');
   };
  
-  // const addBoard = async (board: Board) => {
-  //   const res = await axios.post('/api/board', board);
-  //   console.log(res);
-  // }
+  const addBoard = async (board: BoardData) => {
+    createRequest
+  }
  
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>

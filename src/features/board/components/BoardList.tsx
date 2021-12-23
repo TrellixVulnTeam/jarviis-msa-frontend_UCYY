@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Col, Row} from 'react-bootstrap';
-import {Board} from "../reducer/boardSlice";
+import {BoardData} from "../reducer/boardSlice";
 import '../styles/BoardList.scss';
 // import api from "../../utils/api";
 import {StringUtils} from "../utils/StringUtils"; // 한글화
@@ -28,7 +28,7 @@ const BoardList: React.FC = (props: any) => {
         </Col>
       </Row>
       {
-        boardList.map((board: Board)=>
+        boardList.map((board: BoardData)=>
           <Row className="py-2 board" key={board.id}>
             <Col>{board.title}</Col>
             <Col xs="auto" sm="auto">{board.created}</Col>

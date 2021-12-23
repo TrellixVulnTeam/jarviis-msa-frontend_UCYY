@@ -27,6 +27,20 @@ export interface UserLoginDataPayload {
       birth: string;
     }
     tokenData: string
+  }
+  config: {
+    data: {
+      username: string;
+      email: string;
+      phone: string;
+      address: string;
+      password: string;
+      birth: string;
+    }
+  }
+}
+export interface UserModifyDataPayload {
+  data: {
     
     token: string
   }
@@ -46,27 +60,6 @@ export interface UserLoginDataPayload {
 
   }
 }
-// export interface UserLoginDataPayload {
-//   data: {
-    
-//     token: string
-//   }
-//   // status: number,
-//   // statusText: string,
-//   // content_length: string
-//   // content_type: string
-//   config: {
-//     data: {
-//       username: string;
-//       email: string;
-//       phone: string;
-//       address: string;
-//       password: string;
-//       birth: string;
-//     }
-
-//   }
-// }
 
 //요청하는 데이터
 export interface ExistPayload {
@@ -161,7 +154,7 @@ const userSlice = createSlice({
       state.userLoading = true;
       state.error = null;
     },
-    modifySuccess(state: UserState, action: PayloadAction<UserLoginDataPayload>) {
+    modifySuccess(state: UserState, action: PayloadAction<UserModifyDataPayload>) {
       state.userLoading = false;
       state.userData = action.payload;
     },

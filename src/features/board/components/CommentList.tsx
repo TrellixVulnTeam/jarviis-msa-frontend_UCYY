@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Col, Form, Row} from "react-bootstrap";
-import {Comment} from "../reducer/boardSlice";
+import {CommentData} from "../reducer/boardSlice";
 import "../styles/CommentList.scss";
 import {jwtUtils} from "../utils/jwtUtils";
 import {useSelector} from "react-redux";
@@ -15,7 +15,7 @@ interface Props {
 
 const CommentList: React.FC<Props> = (props) => {
   const [showModal, setShowModal] = useState(false);
-  const [comments, setComments] = useState<Array<Comment>>([]);
+  const [comments, setComments] = useState<Array<CommentData>>([]);
   // const token = useSelector((state: any) => state.Auth.token);
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const CommentList: React.FC<Props> = (props) => {
         </Button>
       </Form>
       {
-        comments.map((comment: Comment) =>
+        comments.map((comment: CommentData) =>
           <Row className="comment" key={comment.id}>
             <Col xs={12}>
               <div className="d-flex justify-content-between">
