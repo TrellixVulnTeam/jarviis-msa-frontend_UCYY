@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import 'features/setting/style/Setting.scss'
-import { UserModify } from 'features/user';
-import CommentList from 'features/board/components/CommentList';
+import { UserDelete, UserModify } from 'features/user';
 import Board from 'features/board/containers/Board';
 
 
@@ -25,11 +24,18 @@ const setting = () => {
             <div >
                 <p data-aos='fade-down'>
                     <p>QnA 등록</p>
-                    <Board/></p>
+                      <div><UserDelete/></div>
+                    </p>
             </div>
             <div >
                 <p data-aos="fade-down">
                     <UserModify/>
+
+                </p>
+            </div>
+            <div >
+                <p data-aos="fade-down">
+                 
 
                 </p>
             </div>

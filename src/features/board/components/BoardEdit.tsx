@@ -79,3 +79,4 @@ const BoardEdit: React.FC = ({match, history}: any) => {
       </Form>
     );
   };
+  export default BoardEdit;

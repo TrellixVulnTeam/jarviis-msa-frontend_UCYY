@@ -56,7 +56,7 @@ const BoardView = ({match, history}: any) => {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleClose}> 
+          <Button variant="primary" onClick={handleClose}>
           {/* onClick={handleDelete} */}
             OK
           </Button>
